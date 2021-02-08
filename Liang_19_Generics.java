@@ -80,3 +80,21 @@ public static <E extends Comparable<E>> void sort(E[] list) {
         }
     }
 }
+/*
+A wildcard generic type has three forms: ?,
+? extends T , and ? super T , where
+T is a generic type. The first form, ? , called an unbounded wildcard, is the same as ?
+extends Object . The second form, ? extends T , called a bounded wildcard, rep-
+resents T or a subtype of T . The third form, ? super T , called a lower bound wildcard,
+denotes T or a supertype of T .
+*/
+
+public static <T> void add(GenericStack<T> stack1,
+    GenericStack<? super T> stack2) {
+    while (!stack1.isEmpty())
+    stack2.push(stack1.pop());
+}
+/*
+public static <T> void add(GenericStack<? extends T> stack1,
+GenericStack<T> stack2)
+*/
