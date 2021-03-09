@@ -1,3 +1,10 @@
+/*
+Collection->Set->HashSet->LinkedHashSet
+Collection->List->Vector->Stack
+Collection->List->ArrayList
+Collection->List->LinkedList
+Collection->Queue->PriorityQueue
+*/
 Collection<String> collection = new ArrayList<>();
 collection.add("New York");
 collection.add("Atlanta");
