@@ -47,6 +47,7 @@ public class SortStringByLength {
         /*
         java.util.Arrays.sort(cities, (s1, s2) −> s1.length() − s2.length());
          */
+        //java.util.Arrays.sort(cities, Comparator.comparing(String::length));
         for (String s : cities) {
             System.out.print(s + " ");
         }
@@ -63,15 +64,15 @@ public class SortStringByLength {
 ///////////////////////////////////
 public class SortStringIgnoreCase {
     public static void main(String[] args) {
-    java.util.List<String> cities = java.util.Arrays.asList
-    ("Atlanta", "Savannah", "New York", "Dallas");
-    cities.sort((s1, s2) −> s1.compareToIgnoreCase(s2));
-    //cities.sort(String::compareToIgnoreCase);
-    for (String s: cities) {
-    System.out.print(s + " ");
+        java.util.List<String> cities = java.util.Arrays.asList
+        ("Atlanta", "Savannah", "New York", "Dallas");
+        cities.sort((s1, s2) −> s1.compareToIgnoreCase(s2));
+        //cities.sort(String::compareToIgnoreCase);
+        for (String s: cities) {
+            System.out.print(s + " ");
+        }
     }
-    }
-    }
+}
 
 /////////////////
 //lambda expretion
@@ -90,3 +91,11 @@ Comparator.comparing(
 public static Comparator<String> comparing(Function<String, Integer> f) {
     return (s1, s2) −> f.apply(s1).compareTo(f.apply(s2));
 }
+
+// thenComparing
+Loan[] list = {new Loan(5.5, 10, 100), new Loan(5, 10, 1000)};
+Arrays.sort(list, Comparator.comparing(Loan::getLoanAmount)
+    .thenComparing(Loan::getAnnualInterestRate));
+//reverse
+Arrays.sort(list, Comparator.comparing(Loan::getLoanAmount)
+    .reverse());
