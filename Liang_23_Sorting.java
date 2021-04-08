@@ -1,4 +1,4 @@
-public class Sorting {
+public class Liang_23_Sorting {
 //7.11, 19.5 Selection Sort
 
 /** The method for sorting the numbers */
